@@ -1,15 +1,12 @@
-<h1><%=params["team"]["name"]%></h1>
-<h2>Team Motto: <%=params["team"]["motto"]%></h2>
-<h2>Hero Name: <%=params["team"]["members"][0]["name"]%></h2>
-<p>Hero Power: <%=params["team"]["members"][0]["power"]%></p>
-<p>Hero Biography: <%=params["team"]["members"][0]["bio"]%></p>
+<h1><%= @team_name %></h1>
+<h2>Team Motto: <%= @team_motto %></h2>
 
-<h2>Team Motto: <%=params["team"]["motto"]%></h2>
-<h2>Hero Name: <%=params["team"]["members"][1]["name"]%></h2>
-<p>Hero Power: <%=params["team"]["members"][1]["power"]%></p>
-<p>Hero Biography: <%=params["team"]["members"][1]["bio"]%></p>
+<% @team_members.each.with_index do |hero, index| %>
+  <h2>Hero Name: <%= @hero_name[index] %></h2>
+  <p>
+    Hero power: <%= @hero_power[index] %>
+    <br>
+    Hero biography: <%= @hero_bio[index] %>
+  </p>
+<% end %>
 
-<h2>Team Motto: <%=params["team"]["motto"]%></h2>
-<h2>Hero Name: <%=params["team"]["members"][2]["name"]%></h2>
-<p>Hero Power: <%=params["team"]["members"][2]["power"]%></p>
-<p>Hero Biography: <%=params["team"]["members"][2]["bio"]%></p>
